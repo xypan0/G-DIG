@@ -1,0 +1,28 @@
+# G-DIG: Towards Gradient-based DIverse and hiGh-quality Instruction Data Selection for Machine Translations
+
+In this implementation, we use model bigscience/bloom-560m for demonstration. And we use a demo dataset demo.json for demonstration. There are three steps in our proposed high-quality selection method in G-DIG:
+
+1. Fine-tune the target model with candidate data $\mathcal{D}_{raw}$ using huggingface compatible model.
+
+```
+Save checkpoint to ./checkpoint, which will be used for calculate the Hessian matrix and scoring.
+```
+
+2. Compute the Hessian matrix.
+
+```
+./hessian.sh
+
+# In this script, demo.json should be replaced by the training data you used to finetune the LLM.
+```
+
+3. run influence function to compute data score.
+
+``` 
+./if_score.sh
+
+# In this script, -d demo.json corresponds to the candidate dataset and -q demo.json corresponds to the seed dataset.
+```
+
+Finally, use the data score according to Equation (4) in the paper to select high-quality data.
+
