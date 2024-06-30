@@ -26,3 +26,23 @@ Save checkpoint to ./checkpoint, which will be used for calculate the Hessian ma
 
 Finally, use the data score according to Equation (4) in the paper to select high-quality data.
 
+
+## Data
+
+We release our selected data (EN->ZH and DE->EN)
+
+1. DE->EN training data of size from 1k to 64k available [here](https://drive.google.com/file/d/1aklM0Q7BV14tVZF8isQdqe_PbpEwHEv9/view)
+2. ZH->EN training data to be continue.
+
+## Citation
+
+If this repo was useful to you, please consider citing
+
+```
+@article{pan2024g,
+  title={G-DIG: Towards Gradient-based DIverse and hiGh-quality Instruction Data Selection for Machine Translation},
+  author={Pan, Xingyuan and Huang, Luyang and Kang, Liyan and Liu, Zhicheng and Lu, Yu and Cheng, Shanbo},
+  journal={arXiv preprint arXiv:2405.12915},
+  year={2024}
+}
+```
